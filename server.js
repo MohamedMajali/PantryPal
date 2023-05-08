@@ -4,7 +4,7 @@ const methodOverride = require('method-override');
 const app = express();
 require('dotenv').config()
 
-// Import routes
+
 const groceriesRoutes = require('./routes/groceries');
 
 const uri = process.env.MONGO_DB_URI

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Document</title>
+</head>
+<body>
+
+  
+
+  <div class="container">
+    <div class="card">
+      <h1><%= grocery.name %></h1>
+  
+       <% if (grocery.image) { %>
+      <img src="<%= grocery.image %>" alt="<%= grocery.name %>" />
+      <% } %>
+
+      <div class="details">
+        <p><strong>Category:</strong> <%= grocery.category %></p>
+        <p><strong>Quantity:</strong> <%= grocery.quantity %></p>
+        <p><strong>Price:</strong> <%= grocery.price %></p>
+        <% if (grocery.brand) { %>
+        <p><strong>Brand:</strong> <%= grocery.brand %></p>
+        <% } %>
+
+
+      </div>
+
+    
+    </div>
+  
+    <div class="links">
+      <a href="/groceries">Back to List</a>
+      <a href="/groceries/<%= grocery._id %>/edit">Edit</a>
+      <form
+        action="/groceries/<%= grocery._id %>?_method=DELETE"
+        method="POST"
+        style="display: inline"
+      >
+        <button>Delete</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
